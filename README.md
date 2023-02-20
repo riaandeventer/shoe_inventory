@@ -83,36 +83,24 @@ Now we can run the program with below command:
 >python inventory.py
 ```
 
-* The file InventoryReset.txt contains the book data that you want to load initially. Update the information detail and note the format.
-* The program will read in this file through a menu option and the database with table will be created or updated if it already exists.
-* After initial load, you will notice the database file ebookstore_db in the folder.
-* Database is called ebookstore and a table called books. The table has the following structure:
-
-|Id     | Title                                     | Author             | Qty  |
-|-------|-------------------------------------------|--------------------|------|
-|3001   | A Tale of Two Cities                      | Charles Dickens    | 30   |
-|3002   | Harry Potter and the Philosopher's Stone  | J.K. Rowling       | 40   |
-|3003   | The Lion, the Witch and the Wardrobe      | C. S. Lewis        | 25   |
-|3004   | The Lord of the Rings                     | J.R.R Tolkien      | 37   |
-|3005   | Alice in Wonderland                       | Lewis Carroll      | 12   |
+* The file inventory.txt contains the shoe data that you want to load initially. Update the information detail and note the format.
+* The program will read in this file through a menu option and store the data in an object list.
 
 ### Executing Program
 
 * Run the program
 * You will see the menu.
 
-![Main Menu](/images/1.jpg)
+![Main Menu](/images/menu.jpg)
 
-* Menu Option 6: Start here to load the database or reset it in the future.
-* Menu Option 1: This will straight display all the books in the inventory.
-* Menu Option 2: This will request an identification number for the book, then book title, author and quantity you have available.
-* Menu Option 3: You need the id of a book to update the title, author or quantity available. Use Menu Option 1 to get id number.
-* Menu Option 4: Remove a book from you inventory by providing the id of the book. Use Menu Option 1 to get the id number.
-* Menu Option 5: Search for books with below menu.
-
-![Main Menu](/images/2.jpg)
-
-* Menu Option 5: With submenu option 4 you can search for books with stock less than a certain number.
+* Menu Option 1: This will load the shoes from the inventory.txt file into the object list.
+* Menu Option 2: This allows the user to add more shoe items.
+* Menu Option 3: This allows the user to view all the shoe items in a table format.
+* Menu Option 4: This allows the user to add more stock to items that are running low.
+* Menu Option 5: Search for shoe with the code as input.
+* Menu Option 6: Print the value of the shoes (number of shoes times the value of a shoe).
+* Menu Option 7: Find shoe that is overstocked and put it up for sales promotion.
+* Menu Option 8: Exit the program.
 
 ## Authors
 
