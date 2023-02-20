@@ -9,35 +9,35 @@ This program reads from the text file inventory.txt and perform actions on the d
 We use a class named Shoes with the attributes: country, code, product, cost, and quantity.
 
 Inside this class we define methods:
-▪ get_cost - Returns the cost of the shoes.
-▪ get_quantity - Returns the quantity of the shoes.
-▪ __str__ - Returns a string representation of a class.
+* get_cost - Returns the cost of the shoes.
+* get_quantity - Returns the quantity of the shoes.
+* __str__ - Returns a string representation of a class.
 
 Outside the class we create a variable with an empty list to store a list of shoes objects.
 
 We also defined the following functions outside the class:
 
-▪ read_shoes_data - This function opens the file inventory.txt and read the data from this file, 
+* read_shoes_data - This function opens the file inventory.txt and read the data from this file, 
       then we create a shoes object with this data and append this object into the shoes list. 
       One line in this file represents data to create one object of shoes. 
       We use the try-except in this function for error handling. 
 
-▪ capture_shoes - This function will allow a user to capture data about additional shoes and use this data to 
+* capture_shoes - This function will allow a user to capture data about additional shoes and use this data to 
       create a shoe object and append this object inside the shoe list.
 
-▪ view_all - This function will iterate over the shoes list and print the details of the shoes returned from the __str__ function. 
+* view_all - This function will iterate over the shoes list and print the details of the shoes returned from the __str__ function. 
       We organise the data in a table format by using Python’s tabulate module.
       
-▪ re_stock - This function will find the shoe object with the lowest quantity, which is the shoes that need to be re-stocked. 
+* re_stock - This function will find the shoe object with the lowest quantity, which is the shoes that need to be re-stocked. 
       We ask the user if they want to add this quantity of shoes and then update it. 
       The quantity is also updated on the file for this shoe.
 
-▪ search_shoe - This function searches for a shoe from the list using the shoe code and return this object so that it will be printed.
+* search_shoe - This function searches for a shoe from the list using the shoe code and return this object so that it will be printed.
 
-▪ value_per_item - This function calculates the total value for each item. 
+* value_per_item - This function calculates the total value for each item. 
       The information is printed on the console for all the shoes.
       
-▪ highest_qty - This code to determines the product with the highest quantity and print this shoe as being for sale.
+* highest_qty - This code to determines the product with the highest quantity and print this shoe as being for sale.
 
 ## Table of Content
 1. Installation
