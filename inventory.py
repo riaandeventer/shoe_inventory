@@ -53,8 +53,7 @@
 # In my command prompt with administrator rights and path as below, I entered 
 # path c:\Windows\system32>py -m pip install tabulate
 # to install the module. Available for Python 3.7+ only.
-# Had to remove tabulate for docker implementation
-# from tabulate import tabulate
+from tabulate import tabulate
 
 # ****************************************************** 
 #   Create Class Definitions
@@ -132,12 +131,14 @@ def read_shoes_data():
         except FileNotFoundError:
             print ()
             print("--> The inventory file cannot be found in the folder.")
+            exit()
 
         # If the file exists but has no data in it, then we will get this error on the next(f_invent) statement.
         except StopIteration:
             file_reads_bln = False
             print ()
             print("--> The inventory file is empty.")
+            exit()
         
         finally:
             # If the file is not found, we will get an error on f_invent.close (), so we will only execute
@@ -152,6 +153,7 @@ def read_shoes_data():
             else :
                 print ()
                 print ("--> Shoes inventory load error... CHECK the Inventory File content!")
+                exit()
                     
 def capture_shoes():
     '''
@@ -238,20 +240,16 @@ def view_all():
     if len (shoes_lst) > 0 :
         # table_nlst is a nested list with headings as the first entry.
         table_nlst = [["Country", "Code", "Product", "Cost", "Quantity"]]
-        print()
-        print ("======================== Shoes Inventory ========================\n")
-        print ("Country      | Code        | Product       | Cost         | Quantity\n") # Added for tabulate removal
 
         # Move the list of objects into a list of lists.
         for i in range (len (shoes_lst)) :
             table_row_lst = shoes_lst [i].__str__().split (", ")
             table_nlst.append (table_row_lst)
-            print(table_row_lst) # Added for tabulate removal
 
         # Use tabulate imported module to display the data in table format.
-        #   print ()
-        #   print ("======================== Shoes Inventory ========================\n")
-        #   print (tabulate(table_nlst, headers = 'firstrow')) 
+        print ()
+        print ("======================== Shoes Inventory ========================\n")
+        print (tabulate(table_nlst, headers = 'firstrow'))
         print ("=================================================================")
 
 def re_stock():
@@ -287,9 +285,7 @@ def re_stock():
         
         print ()
         print ("================= Lowest Quantity Shoes Inventory =================\n")
-        #   print (tabulate(ttable_lst, headers = ["Country", "Code", "Product", "Cost", "Quantity"]))
-        print ("Country      | Code        | Product       | Cost         | Quantity\n")
-        print (ttable_lst)
+        print (tabulate(ttable_lst, headers = ["Country", "Code", "Product", "Cost", "Quantity"]))
         print ("===================================================================\n")
 
         shoes_stock_chr = input ("Would you like to add stock to the inventory? Answer (Y)es or (N)o > ").lower ()
@@ -375,9 +371,7 @@ def search_shoe():
         if code_find_bln == True :
             print ()
             print ("================== Shoes Inventory Search Result ==================\n")
-            print ("Country      | Code        | Product       | Cost         | Quantity\n")
-            print (srch_table_lst)
-            #   print (tabulate(srch_table_lst, headers = ["Country", "Code", "Product", "Cost", "Quantity"]))
+            print (tabulate(srch_table_lst, headers = ["Country", "Code", "Product", "Cost", "Quantity"]))
             print ("===================================================================")
         else :
             print ()
@@ -398,11 +392,6 @@ def value_per_item():
     if len (shoes_lst) > 0 :
         # val_table_nlst is a nested list with first instance being the headers for our table.
         val_table_nlst = [["Country", "Code", "Product", "Cost", "Quantity", "Total Value"]]
-        print()
-        print ("======================== Shoes Inventory - Total Value ========================\n")
-        print ("Country    | Code      | Product       | Cost    | Quantity    | Total Value")
-        #   print (val_table_nlst[0])
-        print()
 
         for i in range (len (shoes_lst)) :
             # Calculate the total value for this instance.
@@ -413,11 +402,10 @@ def value_per_item():
             table_row_lst = (shoes_lst [i].__str__() + ", " + str(total_value_int)).split (", ")
             # Add this instance to our table for our display.
             val_table_nlst.append (table_row_lst)
-            print (table_row_lst)
 
-        #   print ()
-        #   print ("======================== Shoes Inventory - Total Value ========================\n")
-        #   print (tabulate(val_table_nlst, headers = 'firstrow'))
+        print ()
+        print ("======================== Shoes Inventory - Total Value ========================\n")
+        print (tabulate(val_table_nlst, headers = 'firstrow'))
         print ("===============================================================================")
 
 def highest_qty():
@@ -445,9 +433,7 @@ def highest_qty():
         
         print ()
         print ("================= Highest Quantity Shoes Inventory =================\n")
-        print ("Country      | Code        | Product       | Cost         | Quantity\n")
-        print (ttable_lst)
-        #   print (tabulate(ttable_lst, headers = ["Country", "Code", "Product", "Cost", "Quantity"]))
+        print (tabulate(ttable_lst, headers = ["Country", "Code", "Product", "Cost", "Quantity"]))
         print ("===================================================================\n")
         print ("*******************************************************************")
         print (f"\t{highest_quant_cls.product} is FOR SALE at 25% discount!")
