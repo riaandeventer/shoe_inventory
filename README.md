@@ -54,7 +54,7 @@ We also defined the following functions outside the class:
 
 ##### 1.1   Dependencies
 
-The virtual environment requires the installation of python & tabulate.
+The virtual environment requires the installation of python, pip & tabulate.
 
 To install tabulate:
 
@@ -73,7 +73,7 @@ If you are asked for a login then it should be because you might have made a typ
 
 ##### 1.3   Run Program
 
-If your files copied successfully, there should be a folder ebook_store when you (for windows) enter the >dir command.
+If your files copied successfully, there should be a folder shoe_inventory when you (for windows) enter the >dir command.
 Go to this directory with below command.
 ```
 >cd shoe_inventory
