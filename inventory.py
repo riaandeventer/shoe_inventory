@@ -1,9 +1,7 @@
-# Software Engineer: RIAAN VAN DEVENTER (SN: RV22110005417)
-# This was programmed for the Software Engineering BOOTCAMP
+# Software Engineer: RIAAN DEVENTER
 # Written on 27 December 2022
 
-# ************** L1T30 - TASK ASSIGNMENT **************  
-#
+#------------------------------------------------------------------------------------------------
 # Code a Python program that will read from the text file inventory.txt and
 # perform the following on the data, to prepare for presentation to your managers:
 # Create a class named Shoes with the following attributes:
