@@ -11,7 +11,7 @@ We use a class named Shoes with the attributes: country, code, product, cost, an
 Inside this class we define methods:
 * get_cost - Returns the cost of the shoes.
 * get_quantity - Returns the quantity of the shoes.
-* '__str__' - Returns a string representation of a class.
+* _str_ - Returns a string representation of a class.
 
 Outside the class we create a variable with an empty list to store a list of shoes objects.
 
