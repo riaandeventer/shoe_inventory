@@ -1,6 +1,7 @@
 # Shoe Inventory Management Program
 
-This Python program helps the clerk in the shoe store to keep track of the shoes in the store and for management
+This Python program assists the clerk in the shoe store to keep track of the shoes in the store and for management to keep track of 
+stock value and the need for restocking and running marketing campaigns.
 
 ## Description
 
